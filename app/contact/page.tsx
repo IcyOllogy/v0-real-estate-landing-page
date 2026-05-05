@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ValuationModal } from '@/components/ui/valuation-modal'
+import { LearnMoreModal } from '@/components/ui/learn-more-modal'
 import { ScrollToTop } from '@/components/shared/scroll-to-top'
 import { Footer } from '@/components/layout/footer'
 import { CtaSection } from '@/components/sections/cta-section'
@@ -39,6 +40,7 @@ const itemVariants = {
 
 export default function ContactPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false)
 
   return (
     <>
@@ -252,6 +254,8 @@ export default function ContactPage() {
           buttonText="Get Your Free Valuation"
           onOpenModal={() => setIsModalOpen(true)}
           variant="highlight"
+          showLearnMore
+          onLearnMore={() => setIsLearnMoreOpen(true)}
         />
 
         {/* Footer */}
@@ -259,6 +263,11 @@ export default function ContactPage() {
       </div>
 
       <ValuationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <LearnMoreModal 
+        isOpen={isLearnMoreOpen} 
+        onClose={() => setIsLearnMoreOpen(false)} 
+        onGetValuation={() => setIsModalOpen(true)}
+      />
       <ScrollToTop />
     </>
   )
