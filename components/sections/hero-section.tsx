@@ -5,6 +5,7 @@ import { MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { AnimatedOrbs } from '@/components/ui/animated-orbs'
 
 interface HeroSectionProps {
   onOpenModal: () => void
@@ -33,6 +34,9 @@ const itemVariants = {
 export function HeroSection({ onOpenModal }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Gradient Orbs */}
+      <AnimatedOrbs />
+
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -42,7 +46,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background" />
       </div>
 
       {/* Content */}
