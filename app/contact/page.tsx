@@ -10,6 +10,8 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ValuationModal } from '@/components/ui/valuation-modal'
 import { ScrollToTop } from '@/components/shared/scroll-to-top'
+import { Footer } from '@/components/layout/footer'
+import { CtaSection } from '@/components/sections/cta-section'
 
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'julian@julianvance.com', href: 'mailto:julian@julianvance.com' },
@@ -244,12 +246,16 @@ export default function ContactPage() {
           </div>
         </main>
 
-        {/* Simple Footer */}
-        <footer className="border-t border-border py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>&copy; 2026 Julian Vance. All rights reserved.</p>
-          </div>
-        </footer>
+        {/* CTA Section */}
+        <CtaSection
+          headline="Ready to Discover Your Home's True Value?"
+          buttonText="Get Your Free Valuation"
+          onOpenModal={() => setIsModalOpen(true)}
+          variant="highlight"
+        />
+
+        {/* Footer */}
+        <Footer />
       </div>
 
       <ValuationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
