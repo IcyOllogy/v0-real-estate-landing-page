@@ -34,9 +34,6 @@ const itemVariants = {
 export function HeroSection({ onOpenModal }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Gradient Orbs */}
-      <AnimatedOrbs />
-
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -47,6 +44,11 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background" />
+      </div>
+
+      {/* Animated Gradient Orbs - positioned above background, below content */}
+      <div className="absolute inset-0 z-[1]">
+        <AnimatedOrbs />
       </div>
 
       {/* Content */}
